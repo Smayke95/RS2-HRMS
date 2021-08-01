@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRMS", "HRMS\HRMS.csproj", "{B8A67B55-0241-43B3-9851-939E3066482D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8A67B55-0241-43B3-9851-939E3066482D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8A67B55-0241-43B3-9851-939E3066482D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8A67B55-0241-43B3-9851-939E3066482D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8A67B55-0241-43B3-9851-939E3066482D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0BD5B757-C5DA-4B55-9896-864991EF8424}
+	EndGlobalSection
+EndGlobal
