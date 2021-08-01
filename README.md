@@ -7,5 +7,6 @@ The code is released under the MIT License. There is no limitation for both acad
 ## Credentials
 
 ## Development
+1.) Download and install Docker
 
 ## Deployment
