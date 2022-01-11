@@ -1,4 +1,6 @@
+using HRMS.Interfaces;
 using HRMS.Models;
+using HRMS.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -32,6 +34,8 @@ namespace HRMS
 
             services.AddControllers();
             services.AddSwaggerGen();
+
+            services.AddScoped<IEmployeeService, EmployeeService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
