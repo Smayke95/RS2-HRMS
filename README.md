@@ -3,3 +3,10 @@ Seminarski rad iz predmeta Razvoj softvera 2. Tema: Human Resource Management So
 
 ## License
 The code is released under the MIT License. There is no limitation for both academic and commercial usage.
+
+## Credentials
+
+## Development
+1.) Download and install Docker
+
+## Deployment
