@@ -1,5 +1,4 @@
 ﻿using HRMS.Interfaces;
-using HRMS.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -17,7 +16,7 @@ namespace HRMS.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Employee> Get()
+        public IEnumerable<Model.Employee> Get()
         {
             return EmployeeService.GetAll();
         }

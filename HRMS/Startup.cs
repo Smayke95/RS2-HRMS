@@ -29,11 +29,12 @@ namespace HRMS
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<HRMS_Context>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("HRMS_Database")));
-
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
             services.AddSwaggerGen();
+
+            services.AddDbContext<HRMS_Context>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("HRMS_Database")));
 
             services.AddScoped<IEmployeeService, EmployeeService>();
         }
