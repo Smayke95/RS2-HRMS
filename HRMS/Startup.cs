@@ -1,6 +1,5 @@
-using HRMS.Interfaces;
+using HRMS.Extensions;
 using HRMS.Models;
-using HRMS.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -36,7 +35,7 @@ namespace HRMS
             services.AddDbContext<HRMS_Context>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("HRMS_Database")));
 
-            services.AddScoped<IEmployeeService, EmployeeService>();
+            services.AddScopedServices();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

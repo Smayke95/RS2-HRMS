@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using HRMS.Models;
 
 namespace HRMS.Interfaces
 {
-    public interface IEmployeeService
-    {
-        public IEnumerable<Model.Employee> GetAll();
-    }
+    public interface IEmployeeService : ICrudService<Employee, Model.Employee> { }
 }

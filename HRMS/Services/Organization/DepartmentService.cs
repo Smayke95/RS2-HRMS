@@ -4,9 +4,9 @@ using HRMS.Models;
 
 namespace HRMS.Services
 {
-    public class EmployeeService : CrudService<Employee, Model.Employee>, IEmployeeService
+    public class DepartmentService : CrudService<Department, Model.Department>, IDepartmentService
     {
-        public EmployeeService(
+        public DepartmentService(
             HRMS_Context context,
             IMapper mapper)
             : base(context, mapper) { }
