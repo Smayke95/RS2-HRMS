@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRMS", "HRMS\HRMS.csproj", "{B8A67B55-0241-43B3-9851-939E3066482D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRMS.Model", "HRMS.Model\HRMS.Model.csproj", "{B4B33F7B-6B2A-4AF7-9347-DE27B2856A32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRMS.Model", "HRMS.Model\HRMS.Model.csproj", "{B4B33F7B-6B2A-4AF7-9347-DE27B2856A32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRMS.Desktop", "HRMS.Desktop\HRMS.Desktop.csproj", "{BF1B125C-193C-4327-98CD-BA6926C68E8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B4B33F7B-6B2A-4AF7-9347-DE27B2856A32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4B33F7B-6B2A-4AF7-9347-DE27B2856A32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4B33F7B-6B2A-4AF7-9347-DE27B2856A32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF1B125C-193C-4327-98CD-BA6926C68E8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF1B125C-193C-4327-98CD-BA6926C68E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF1B125C-193C-4327-98CD-BA6926C68E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF1B125C-193C-4327-98CD-BA6926C68E8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
