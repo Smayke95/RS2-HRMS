@@ -3,13 +3,83 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:HRMS.Desktop"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="HRMS" Height="720" Width="1280"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid>
-        <GroupBox Header="Korisnici" Margin="65,107,159,49">
-            <DataGrid x:Name="dgKorisnici" Cursor="Hand"/>
-        </GroupBox>
-        <Button Content="Prikaži" HorizontalAlignment="Left" Margin="691,42,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Grid>
+            <DockPanel>
+
+                <materialDesign:ColorZone
+                    Name="SideMenu"
+                    Width="60"
+                    VerticalAlignment="Stretch"
+                    materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                    DockPanel.Dock="Left"
+                    Mode="Dark">
+
+                    <Grid>
+                        <Button
+                            Name="Account"
+                            Width="50"
+                            Height="50"
+                            Margin="0,10,0,0"
+                            Padding="0"
+                            VerticalAlignment="Top"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}"
+                            Click="Account_Click">
+                            <materialDesign:PackIcon
+                                Width="40"
+                                Height="40"
+                                Kind="Account" />
+                        </Button>
+                    </Grid>
+
+                </materialDesign:ColorZone>
+
+                <materialDesign:DrawerHost Background="DarkGray" IsLeftDrawerOpen="{Binding ElementName=SideMenu, Path=IsMouseOver, Mode=OneWay}">
+                    <materialDesign:DrawerHost.LeftDrawerContent>
+                        <Grid Width="200" Background="#303030">
+                            <TextBlock
+                                Name="DisplayName"
+                                Height="50"
+                                Margin="0,10,0,0"
+                                Padding="0,15,0,0"
+                                VerticalAlignment="Top"
+                                Foreground="White"
+                                Style="{StaticResource MaterialDesignBody2TextBlock}"
+                                Visibility="Collapsed">
+                                Display Name
+                            </TextBlock>
+                            <TextBlock
+                                Name="Dashboard_Label"
+                                Height="50"
+                                Margin="0,80,0,0"
+                                Padding="0,15,0,0"
+                                VerticalAlignment="Top"
+                                Foreground="White"
+                                Style="{StaticResource MaterialDesignBody2TextBlock}"
+                                Visibility="Collapsed">
+                                Početna
+                            </TextBlock>
+                        </Grid>
+                    </materialDesign:DrawerHost.LeftDrawerContent>
+
+                    <Grid>
+                        <ContentControl Name="ContentArea" />
+                    </Grid>
+                </materialDesign:DrawerHost>
+
+            </DockPanel>
+        </Grid>
     </Grid>
 </Window>
