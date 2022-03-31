@@ -16,7 +16,7 @@ namespace HRMS.Desktop.Services
 
         public async Task<IEnumerable<M>> GetAll()
         {
-            return await $"{Settings.Default.ApiURL}/Department".GetJsonAsync<IEnumerable<M>>();
+            return await $"{Settings.Default.ApiURL}/Department".WithOAuthBearerToken(Settings.Default.Token).GetJsonAsync<IEnumerable<M>>();
         }
 
         public Task<M> Insert(M model)
