@@ -4,6 +4,6 @@ namespace HRMS.Desktop.Interfaces
 {
     public interface IAuthService
     {
-        Task Login(string email, string password);
+        Task<bool> Login(string email, string password);
     }
 }

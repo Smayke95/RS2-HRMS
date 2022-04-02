@@ -10,6 +10,11 @@ namespace HRMS.Desktop
             InitializeComponent();
         }
 
-        private void Account_Click(object sender, RoutedEventArgs e) => ContentArea.Content = new Employees();
+        private void Dashboard_Click(object sender, RoutedEventArgs e) => ContentArea.Content = new Employees();
+        private void Project_Click(object sender, RoutedEventArgs e) => ContentArea.Content = new Employees();
+        private void Chat_Click(object sender, RoutedEventArgs e) => ContentArea.Content = new Employees();
+        private void Calendar_Click(object sender, RoutedEventArgs e) => ContentArea.Content = new Employees();
+        private void Organization_Click(object sender, RoutedEventArgs e) => ContentArea.Content = new Employees();
+        private void Settings_Click(object sender, RoutedEventArgs e) => ContentArea.Content = new Employees();
     }
 }

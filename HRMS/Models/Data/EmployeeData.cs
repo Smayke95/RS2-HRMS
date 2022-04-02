@@ -21,6 +21,7 @@ namespace HRMS.Models.Data
                     CityId = 1,
                     Image = "/img/avatars/default.png",
                     Email = "anes@hrms.com",
+                    Password = "19a2854144b63a8f7617a6f225019b12",
                     Phone = "38762715825",
                     Mobile = "38762715825",
                     OfficePhone = "38762715825",
@@ -38,7 +39,8 @@ namespace HRMS.Models.Data
                     Address = "Dobrinja",
                     CityId = 1,
                     Image = "/img/avatars/default.png",
-                    Email = "irena@hrms.com"
+                    Email = "irena@hrms.com",
+                    Password = "19a2854144b63a8f7617a6f225019b12"
                 }
             );
         }

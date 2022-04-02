@@ -19,8 +19,6 @@ namespace HRMS.Desktop.Controls
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            await AuthService.Login("anes@hrms.com", "");
-
             dgKorisnici.ItemsSource = await DepartmentService.GetAll();
         }
     }

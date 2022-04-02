@@ -6,14 +6,19 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:HRMS.Desktop"
         mc:Ignorable="d"
-        Title="HRMS" Height="720" Width="1280"
+        Title="HRMS"
+        Width="1280"
+        Height="720"
+        MinWidth="1280"
+        MinHeight="720"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
-        TextOptions.TextFormattingMode="Ideal" 
-        TextOptions.TextRenderingMode="Auto"        
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}">
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid>
             <DockPanel>
@@ -28,7 +33,7 @@
 
                     <Grid>
                         <Button
-                            Name="Account"
+                            x:Name="Dashboard"
                             Width="50"
                             Height="50"
                             Margin="0,10,0,0"
@@ -36,11 +41,91 @@
                             VerticalAlignment="Top"
                             Background="{x:Null}"
                             BorderBrush="{x:Null}"
-                            Click="Account_Click">
+                            Click="Dashboard_Click">
                             <materialDesign:PackIcon
                                 Width="40"
                                 Height="40"
-                                Kind="Account" />
+                                Kind="ViewDashboard" />
+                        </Button>
+
+                        <Button
+                            x:Name="Project"
+                            Width="50"
+                            Height="50"
+                            Margin="0,70,0,0"
+                            Padding="0"
+                            VerticalAlignment="Top"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}"
+                            Click="Project_Click">
+                            <materialDesign:PackIcon
+                                Width="40"
+                                Height="40"
+                                Kind="ContentPaste" />
+                        </Button>
+
+                        <Button
+                            x:Name="Chat"
+                            Width="50"
+                            Height="50"
+                            Margin="0,130,0,0"
+                            Padding="0"
+                            VerticalAlignment="Top"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}"
+                            Click="Chat_Click">
+                            <materialDesign:PackIcon
+                                Width="40"
+                                Height="40"
+                                Kind="MessageText" />
+                        </Button>
+
+                        <Button
+                            x:Name="Calendar"
+                            Width="50"
+                            Height="50"
+                            Margin="0,190,0,0"
+                            Padding="0"
+                            VerticalAlignment="Top"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}"
+                            Click="Calendar_Click">
+                            <materialDesign:PackIcon
+                                Width="40"
+                                Height="40"
+                                Kind="Calendar" />
+                        </Button>
+
+                        <Button
+                            x:Name="Organization"
+                            Width="50"
+                            Height="50"
+                            Margin="0,250,0,0"
+                            Padding="0"
+                            VerticalAlignment="Top"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}"
+                            Click="Organization_Click">
+                            <materialDesign:PackIcon
+                                Width="40"
+                                Height="40"
+                                Kind="PersonGroup" />
+                        </Button>
+
+                        <Button
+                            x:Name="Settings"
+                            Width="50"
+                            Height="50"
+                            Margin="0,0,0,10"
+                            Padding="0"
+                            VerticalAlignment="Bottom"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}"
+                            Click="Settings_Click">
+                            <materialDesign:PackIcon
+                                Width="40"
+                                Height="40"
+                                Kind="Settings" />
                         </Button>
                     </Grid>
 
@@ -50,26 +135,70 @@
                     <materialDesign:DrawerHost.LeftDrawerContent>
                         <Grid Width="200" Background="#303030">
                             <TextBlock
-                                Name="DisplayName"
+                                x:Name="lbl_Dashboard"
                                 Height="50"
                                 Margin="0,10,0,0"
                                 Padding="0,15,0,0"
                                 VerticalAlignment="Top"
                                 Foreground="White"
                                 Style="{StaticResource MaterialDesignBody2TextBlock}"
-                                Visibility="Collapsed">
-                                Display Name
+                                Visibility="Visible">
+                                Početna
                             </TextBlock>
+
                             <TextBlock
-                                Name="Dashboard_Label"
+                                Name="lbl_Project"
                                 Height="50"
-                                Margin="0,80,0,0"
+                                Margin="0,70,0,0"
                                 Padding="0,15,0,0"
                                 VerticalAlignment="Top"
                                 Foreground="White"
-                                Style="{StaticResource MaterialDesignBody2TextBlock}"
-                                Visibility="Collapsed">
-                                Početna
+                                Style="{StaticResource MaterialDesignBody2TextBlock}">
+                                Zadaci
+                            </TextBlock>
+
+                            <TextBlock
+                                Name="lbl_Chat"
+                                Height="50"
+                                Margin="0,130,0,0"
+                                Padding="0,15,0,0"
+                                VerticalAlignment="Top"
+                                Foreground="White"
+                                Style="{StaticResource MaterialDesignBody2TextBlock}">
+                                Razgovor
+                            </TextBlock>
+
+                            <TextBlock
+                                Name="lbl_Calendar"
+                                Height="50"
+                                Margin="0,190,0,0"
+                                Padding="0,15,0,0"
+                                VerticalAlignment="Top"
+                                Foreground="White"
+                                Style="{StaticResource MaterialDesignBody2TextBlock}">
+                                Kalendar
+                            </TextBlock>
+
+                            <TextBlock
+                                Name="lbl_Organization"
+                                Height="50"
+                                Margin="0,250,0,0"
+                                Padding="0,15,0,0"
+                                VerticalAlignment="Top"
+                                Foreground="White"
+                                Style="{StaticResource MaterialDesignBody2TextBlock}">
+                                Zaposlenici
+                            </TextBlock>
+
+                            <TextBlock
+                                Name="lbl_Settings"
+                                Height="50"
+                                Margin="0,0,0,10"
+                                Padding="0,15,0,0"
+                                VerticalAlignment="Bottom"
+                                Foreground="White"
+                                Style="{StaticResource MaterialDesignBody2TextBlock}">
+                                Postavke
                             </TextBlock>
                         </Grid>
                     </materialDesign:DrawerHost.LeftDrawerContent>

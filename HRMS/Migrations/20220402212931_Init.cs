@@ -178,6 +178,7 @@ namespace HRMS.Migrations
                     CitizenshipId = table.Column<int>(type: "int", nullable: true),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Mobile = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     OfficePhone = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -521,9 +522,9 @@ namespace HRMS.Migrations
                 columns: new[] { "Id", "Date", "Message", "Type" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2022, 1, 11, 18, 44, 30, 3, DateTimeKind.Local).AddTicks(5871), "", "INFO" },
-                    { 2, new DateTime(2022, 1, 11, 18, 44, 30, 3, DateTimeKind.Local).AddTicks(6708), "", "WARNING" },
-                    { 3, new DateTime(2022, 1, 11, 18, 44, 30, 3, DateTimeKind.Local).AddTicks(6739), "", "ERROR" }
+                    { 1, new DateTime(2022, 4, 2, 23, 29, 31, 93, DateTimeKind.Local).AddTicks(2892), "", "INFO" },
+                    { 2, new DateTime(2022, 4, 2, 23, 29, 31, 93, DateTimeKind.Local).AddTicks(3771), "", "WARNING" },
+                    { 3, new DateTime(2022, 4, 2, 23, 29, 31, 93, DateTimeKind.Local).AddTicks(3805), "", "ERROR" }
                 });
 
             migrationBuilder.InsertData(
@@ -613,11 +614,11 @@ namespace HRMS.Migrations
 
             migrationBuilder.InsertData(
                 table: "Employees",
-                columns: new[] { "Id", "Address", "BankAccount", "BirthDate", "BirthPlaceId", "CitizenshipId", "CityId", "CreateDate", "EducationId", "Email", "FirstName", "Gender", "Image", "LastName", "MaidenName", "Mobile", "Note", "OfficePhone", "ParentName", "PersonalIdentificationNumber", "Phone", "PreviousLOSMonths", "PreviousLOSYears", "Profession", "RegistrationNumber", "WorkerCode" },
+                columns: new[] { "Id", "Address", "BankAccount", "BirthDate", "BirthPlaceId", "CitizenshipId", "CityId", "CreateDate", "EducationId", "Email", "FirstName", "Gender", "Image", "LastName", "MaidenName", "Mobile", "Note", "OfficePhone", "ParentName", "Password", "PersonalIdentificationNumber", "Phone", "PreviousLOSMonths", "PreviousLOSYears", "Profession", "RegistrationNumber", "WorkerCode" },
                 values: new object[,]
                 {
-                    { 1, "4. Muslimanske brigade 20", null, new DateTime(1995, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, null, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "anes@hrms.com", "Anes", 0, "/img/avatars/default.png", "Smajić", null, "38762715825", null, "38762715825", null, null, "38762715825", 0, 0, "Ekonomski tehničar", "1234567890123", null },
-                    { 2, "Dobrinja", null, new DateTime(1998, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, null, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "irena@hrms.com", "Irena", 1, "/img/avatars/default.png", "Vilić", null, null, null, null, null, null, null, 0, 0, null, "1234567890123", null }
+                    { 1, "4. Muslimanske brigade 20", null, new DateTime(1995, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, null, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "anes@hrms.com", "Anes", 0, "/img/avatars/default.png", "Smajić", null, "38762715825", null, "38762715825", null, "19a2854144b63a8f7617a6f225019b12", null, "38762715825", 0, 0, "Ekonomski tehničar", "1234567890123", null },
+                    { 2, "Dobrinja", null, new DateTime(1998, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, null, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "irena@hrms.com", "Irena", 1, "/img/avatars/default.png", "Vilić", null, null, null, null, null, "19a2854144b63a8f7617a6f225019b12", null, null, 0, 0, null, "1234567890123", null }
                 });
 
             migrationBuilder.InsertData(
@@ -691,8 +692,8 @@ namespace HRMS.Migrations
                 columns: new[] { "Id", "Content", "EmployeeId", "TaskId", "Time" },
                 values: new object[,]
                 {
-                    { 1, "Task preuzet dana 19.8. i stavljen 'In progress'.", 1, 1, new DateTime(2022, 1, 11, 18, 44, 29, 999, DateTimeKind.Local).AddTicks(8370) },
-                    { 2, "Task zavrsen.", 2, 2, new DateTime(2022, 1, 11, 18, 44, 30, 3, DateTimeKind.Local).AddTicks(3117) }
+                    { 1, "Task preuzet dana 19.8. i stavljen 'In progress'.", 1, 1, new DateTime(2022, 4, 2, 23, 29, 31, 89, DateTimeKind.Local).AddTicks(9279) },
+                    { 2, "Task zavrsen.", 2, 2, new DateTime(2022, 4, 2, 23, 29, 31, 93, DateTimeKind.Local).AddTicks(146) }
                 });
 
             migrationBuilder.CreateIndex(

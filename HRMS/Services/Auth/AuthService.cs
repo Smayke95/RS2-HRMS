@@ -1,4 +1,5 @@
-﻿using HRMS.Interfaces;
+﻿using HRMS.Helpers;
+using HRMS.Interfaces;
 using HRMS.Model;
 using HRMS.Models;
 using Microsoft.Extensions.Configuration;
@@ -28,7 +29,8 @@ namespace HRMS.Services
             var user = Context
                 .Employees
                 .FirstOrDefault(x =>
-                    x.Email == login.Email);
+                    x.Email == login.Email &&
+                    x.Password == EncryptionHelpers.Hash(login.Password));
 
             if (user is null) return "Wrong credentials!";
 

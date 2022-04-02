@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HRMS.Migrations
 {
     [DbContext(typeof(HRMS_Context))]
-    [Migration("20220111174430_Init")]
+    [Migration("20220402212931_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -402,6 +402,9 @@ namespace HRMS.Migrations
                     b.Property<string>("ParentName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PersonalIdentificationNumber")
                         .HasColumnType("nvarchar(max)");
 
@@ -451,6 +454,7 @@ namespace HRMS.Migrations
                             LastName = "Smajić",
                             Mobile = "38762715825",
                             OfficePhone = "38762715825",
+                            Password = "19a2854144b63a8f7617a6f225019b12",
                             Phone = "38762715825",
                             PreviousLOSMonths = 0,
                             PreviousLOSYears = 0,
@@ -470,6 +474,7 @@ namespace HRMS.Migrations
                             Gender = 1,
                             Image = "/img/avatars/default.png",
                             LastName = "Vilić",
+                            Password = "19a2854144b63a8f7617a6f225019b12",
                             PreviousLOSMonths = 0,
                             PreviousLOSYears = 0,
                             RegistrationNumber = "1234567890123"
@@ -717,21 +722,21 @@ namespace HRMS.Migrations
                         new
                         {
                             Id = 1,
-                            Date = new DateTime(2022, 1, 11, 18, 44, 30, 3, DateTimeKind.Local).AddTicks(5871),
+                            Date = new DateTime(2022, 4, 2, 23, 29, 31, 93, DateTimeKind.Local).AddTicks(2892),
                             Message = "",
                             Type = "INFO"
                         },
                         new
                         {
                             Id = 2,
-                            Date = new DateTime(2022, 1, 11, 18, 44, 30, 3, DateTimeKind.Local).AddTicks(6708),
+                            Date = new DateTime(2022, 4, 2, 23, 29, 31, 93, DateTimeKind.Local).AddTicks(3771),
                             Message = "",
                             Type = "WARNING"
                         },
                         new
                         {
                             Id = 3,
-                            Date = new DateTime(2022, 1, 11, 18, 44, 30, 3, DateTimeKind.Local).AddTicks(6739),
+                            Date = new DateTime(2022, 4, 2, 23, 29, 31, 93, DateTimeKind.Local).AddTicks(3805),
                             Message = "",
                             Type = "ERROR"
                         });
@@ -1184,7 +1189,7 @@ namespace HRMS.Migrations
                             Content = "Task preuzet dana 19.8. i stavljen 'In progress'.",
                             EmployeeId = 1,
                             TaskId = 1,
-                            Time = new DateTime(2022, 1, 11, 18, 44, 29, 999, DateTimeKind.Local).AddTicks(8370)
+                            Time = new DateTime(2022, 4, 2, 23, 29, 31, 89, DateTimeKind.Local).AddTicks(9279)
                         },
                         new
                         {
@@ -1192,7 +1197,7 @@ namespace HRMS.Migrations
                             Content = "Task zavrsen.",
                             EmployeeId = 2,
                             TaskId = 2,
-                            Time = new DateTime(2022, 1, 11, 18, 44, 30, 3, DateTimeKind.Local).AddTicks(3117)
+                            Time = new DateTime(2022, 4, 2, 23, 29, 31, 93, DateTimeKind.Local).AddTicks(146)
                         });
                 });
 
