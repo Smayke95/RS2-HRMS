@@ -11,12 +11,12 @@ namespace HRMS.Desktop.Services
     {
         public async Task<M> Get(int id)
         {
-            return await $"{Settings.Default.ApiURL}/Department/{id}".GetJsonAsync<M>();
+            return await $"{Settings.Default.ApiURL}/{typeof(M).Name}/{id}".GetJsonAsync<M>();
         }
 
         public async Task<IEnumerable<M>> GetAll()
         {
-            return await $"{Settings.Default.ApiURL}/Department".WithOAuthBearerToken(Settings.Default.Token).GetJsonAsync<IEnumerable<M>>();
+            return await $"{Settings.Default.ApiURL}/{typeof(M).Name}".WithOAuthBearerToken(Settings.Default.Token).GetJsonAsync<IEnumerable<M>>();
         }
 
         public Task<M> Insert(M model)

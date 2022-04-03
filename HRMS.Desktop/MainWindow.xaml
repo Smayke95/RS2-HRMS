@@ -203,7 +203,7 @@
                         </Grid>
                     </materialDesign:DrawerHost.LeftDrawerContent>
 
-                    <Grid>
+                    <Grid Margin="20">
                         <ContentControl Name="ContentArea" />
                     </Grid>
                 </materialDesign:DrawerHost>

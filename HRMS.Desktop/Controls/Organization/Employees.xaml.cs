@@ -1,25 +1,33 @@
 ﻿using HRMS.Desktop.Interfaces;
 using HRMS.Desktop.Services;
-using System.Windows;
 using System.Windows.Controls;
 
 namespace HRMS.Desktop.Controls
 {
     public partial class Employees : UserControl
     {
-        private readonly IAuthService AuthService;
         private readonly IDepartmentService DepartmentService;
+        private readonly IEmployeePositionService EmployeePositionService;
+        private readonly IEmployeeService EmployeeService;
+        private readonly IPositionService PositionService;
 
         public Employees()
         {
             InitializeComponent();
-            AuthService = new AuthService();
             DepartmentService = new DepartmentService();
+            EmployeePositionService = new EmployeePositionService();
+            EmployeeService = new EmployeeService();
+            PositionService = new PositionService();
+
+            Load();
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private async void Load()
         {
-            dgKorisnici.ItemsSource = await DepartmentService.GetAll();
+            dg_Employees.ItemsSource = await EmployeeService.GetAll();
+            dg_EmployeePositions.ItemsSource = await EmployeePositionService.GetAll();
+            dg_Positions.ItemsSource = await PositionService.GetAll();
+            dg_Departments.ItemsSource = await DepartmentService.GetAll();
         }
     }
 }

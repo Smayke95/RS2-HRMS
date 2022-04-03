@@ -7,12 +7,35 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <GroupBox Margin="65,107,67,388">
-            <GroupBox.Header>
-                <Label Foreground="#DDFFFFFF">Korisnici</Label>
-            </GroupBox.Header>
-            <DataGrid x:Name="dgKorisnici" Cursor="Hand"/>
-        </GroupBox>
-        <Button Content="Prikaži" HorizontalAlignment="Left" Margin="691,42,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TabControl Style="{StaticResource MaterialDesignNavigatilRailTabControl}"
+                    TabStripPlacement="Top">
+            <TabItem Width="200"
+                     Header="Zaposlenici">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dg_Employees" Cursor="Hand"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Width="200"
+                     Header="Zaposlenje">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dg_EmployeePositions" Cursor="Hand"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Width="200"
+                     Header="Pozicije">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dg_Positions" Cursor="Hand"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Width="200"
+                     Header="Kompanija">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dg_Departments" Cursor="Hand"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </UserControl>
