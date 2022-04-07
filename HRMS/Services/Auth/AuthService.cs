@@ -39,17 +39,14 @@ namespace HRMS.Services
             var signingCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
-                issuer: Configuration.GetValue<string>("JWT:Issuer"),
-                audience: Configuration.GetValue<string>("JWT:Audience"),
+                issuer: null,
+                audience: null,
                 claims: new List<Claim>(),
                 expires: DateTime.Now.AddHours(1),
                 signingCredentials: signingCredentials
             );
 
-            var tokenJson = new JwtSecurityTokenHandler()
-                .WriteToken(token);
-
-            return tokenJson;
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }
 }

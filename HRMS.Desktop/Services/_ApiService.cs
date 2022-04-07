@@ -10,28 +10,31 @@ namespace HRMS.Desktop.Services
         where M : class
     {
         public async Task<M> Get(int id)
-        {
-            return await $"{Settings.Default.ApiURL}/{typeof(M).Name}/{id}".GetJsonAsync<M>();
-        }
+            => await $"{Settings.Default.ApiURL}/{typeof(M).Name}/{id}"
+                .WithOAuthBearerToken(Settings.Default.Token)
+                .GetJsonAsync<M>();
 
         public async Task<IEnumerable<M>> GetAll()
-        {
-            return await $"{Settings.Default.ApiURL}/{typeof(M).Name}".WithOAuthBearerToken(Settings.Default.Token).GetJsonAsync<IEnumerable<M>>();
-        }
+            => await $"{Settings.Default.ApiURL}/{typeof(M).Name}"
+                .WithOAuthBearerToken(Settings.Default.Token)
+                .GetJsonAsync<IEnumerable<M>>();
 
-        public Task<M> Insert(M model)
-        {
-            throw new System.NotImplementedException();
-        }
+        public async Task<M> Insert(M model)
+            => await $"{Settings.Default.ApiURL}/{typeof(M).Name}"
+                .WithOAuthBearerToken(Settings.Default.Token)
+                .PostJsonAsync(model)
+                .ReceiveJson<M>();
 
-        public Task<M> Update(M model)
-        {
-            throw new System.NotImplementedException();
-        }
+        public async Task<M> Update(M model)
+            => await $"{Settings.Default.ApiURL}/{typeof(M).Name}"
+                .WithOAuthBearerToken(Settings.Default.Token)
+                .PutJsonAsync(model)
+                .ReceiveJson<M>();
 
-        public Task<bool> Delete(int id)
-        {
-            throw new System.NotImplementedException();
-        }
+        public async Task<bool> Delete(int id)
+            => await $"{Settings.Default.ApiURL}/{typeof(M).Name}/{id}"
+                .WithOAuthBearerToken(Settings.Default.Token)
+                .DeleteAsync()
+                .ReceiveJson<bool>();
     }
 }
