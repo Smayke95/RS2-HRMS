@@ -8,6 +8,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /src
 COPY ["HRMS/HRMS.csproj", "HRMS/"]
+COPY ["HRMS.Model/HRMS.Model.csproj", "HRMS.Model/"]
 RUN dotnet restore "HRMS/HRMS.csproj"
 COPY . .
 WORKDIR "/src/HRMS"

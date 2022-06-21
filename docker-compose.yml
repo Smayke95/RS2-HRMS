@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  hrms.sql:
+    container_name: hrms.sql
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    restart: unless-stopped
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=8nB|9gG(
+      - MSSQL_PID=Developer
+    ports:
+      - 1434:1433
+    networks:
+      - hrms.net
+
+  hrms.api:
+    container_name: hrms.api
+    image: hrms.api
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: HRMS/Dockerfile
+    environment:
+      - ConnectionStrings:HRMS_Database=Server=localhost,1434;Database=HRMS_V2;User=sa;Password=8nB|9gG(;ConnectRetryCount=0
+    ports:
+      - "5080:80"
+      - "5433:433"
+    networks:
+      - hrms.net
+    depends_on:
+      - hrms.sql
+
+networks:
+  hrms.net:
+    driver: bridge 
