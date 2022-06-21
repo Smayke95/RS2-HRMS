@@ -3,13 +3,14 @@ using System.Threading.Tasks;
 
 namespace HRMS.Desktop.Interfaces
 {
-    public interface IApiService<M>
+    public interface IApiService<M, VM>
         where M : class
+        where VM : class
     {
-        Task<M> Get(int id);
-        Task<IEnumerable<M>> GetAll();
-        Task<M> Insert(M model);
-        Task<M> Update(M model);
+        Task<VM> Get(int id);
+        Task<IEnumerable<VM>> GetAll();
+        Task<VM> Insert(VM model);
+        Task<VM> Update(VM model);
         Task<bool> Delete(int id);
     }
 }

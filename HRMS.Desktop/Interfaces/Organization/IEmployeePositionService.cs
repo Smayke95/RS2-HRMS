@@ -1,6 +1,7 @@
-﻿using HRMS.Model;
+﻿using HRMS.Desktop.ViewModels;
+using HRMS.Model;
 
 namespace HRMS.Desktop.Interfaces
 {
-    internal interface IEmployeePositionService : IApiService<EmployeePosition> { }
+    public interface IEmployeePositionService : IApiService<EmployeePosition, EmployeePositionViewModel> { }
 }

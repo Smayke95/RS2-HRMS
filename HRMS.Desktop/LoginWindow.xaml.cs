@@ -1,17 +1,22 @@
 ﻿using HRMS.Desktop.Interfaces;
-using HRMS.Desktop.Services;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Windows;
 
 namespace HRMS.Desktop
 {
     public partial class LoginWindow : Window
     {
+        private readonly IServiceProvider ServiceProvider;
         private readonly IAuthService AuthService;
 
-        public LoginWindow()
+        public LoginWindow(
+            IServiceProvider serviceProvider,
+            IAuthService authService)
         {
             InitializeComponent();
-            AuthService = new AuthService();
+            ServiceProvider = serviceProvider;
+            AuthService = authService;
         }
 
         private async void btn_Login_Click(object sender, RoutedEventArgs e)
@@ -22,7 +27,7 @@ namespace HRMS.Desktop
             {
                 App.Current.MainWindow.Close();
 
-                var mainWindow = new MainWindow();
+                var mainWindow = ServiceProvider.GetService<MainWindow>();
                 App.Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
                 App.Current.MainWindow = mainWindow;
                 mainWindow.Show();

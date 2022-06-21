@@ -12,7 +12,27 @@
             <TabItem Width="200"
                      Header="Zaposlenici">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dg_Employees" Cursor="Hand"/>
+                    <DataGrid x:Name="dg_Employees"
+                              AutoGenerateColumns="False"
+                              CanUserAddRows="False"
+                              Cursor="Hand">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Width="100" Height="100" Source="{Binding ImageFile}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Binding="{Binding FirstName}"/>
+                            <DataGridTextColumn Header="Prezime" Binding="{Binding LastName}"/>
+                            <DataGridTextColumn Header="Spol" Binding="{Binding Gender}"/>
+                            <DataGridTextColumn Header="Adresa" Binding="{Binding Address}"/>
+                            <DataGridTextColumn Header="Grad" Binding="{Binding City}"/>
+                            <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
             </TabItem>
 

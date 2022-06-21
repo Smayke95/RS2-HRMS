@@ -1,5 +1,4 @@
 ﻿using HRMS.Desktop.Interfaces;
-using HRMS.Desktop.Services;
 using System.Windows.Controls;
 
 namespace HRMS.Desktop.Controls
@@ -11,13 +10,17 @@ namespace HRMS.Desktop.Controls
         private readonly IEmployeeService EmployeeService;
         private readonly IPositionService PositionService;
 
-        public Employees()
+        public Employees(
+            IDepartmentService departmentService,
+            IEmployeePositionService employeePositionService,
+            IEmployeeService employeeService,
+            IPositionService positionService)
         {
             InitializeComponent();
-            DepartmentService = new DepartmentService();
-            EmployeePositionService = new EmployeePositionService();
-            EmployeeService = new EmployeeService();
-            PositionService = new PositionService();
+            DepartmentService = departmentService;
+            EmployeePositionService = employeePositionService;
+            EmployeeService = employeeService;
+            PositionService = positionService;
 
             Load();
         }
